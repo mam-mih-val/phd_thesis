@@ -13,10 +13,9 @@ autolang=other,% многоязычная библиография
 clearlang=true,% внутренний сброс поля language, если он совпадает с языком из babel/polyglossia
 defernumbers=true,% нумерация проставляется после двух компиляций, зато позволяет выцеплять библиографию по ключевым словам и нумеровать не из большего списка
 sortcites=true,% сортировать номера затекстовых ссылок при цитировании (если в квадратных скобках несколько ссылок, то отображаться будут отсортированно, а не абы как)
-%doi=false,% Показывать или нет ссылки на DOI
+doi=false,% Показывать или нет ссылки на DOI
 %isbn=false,% Показывать или нет ISBN
 ]{biblatex}
-
 
 
 %http://tex.stackexchange.com/a/141831/79756
@@ -224,10 +223,6 @@ sortcites=true,% сортировать номера затекстовых сс
 \makeatother
 \defbibheading{countauthor}{}
 
-
-
-
-
 %%% Создание команд для вывода списка литературы %%%
 \newcommand*{\insertbibliofull}{
 \printbibliography[keyword=bibliofull,section=0]
@@ -243,4 +238,3 @@ sortcites=true,% сортировать номера затекстовых сс
 \printbibliography[keyword=biblioother]
 \printbibliography[heading=counter,env=counter,keyword=biblioother]
 }
-
