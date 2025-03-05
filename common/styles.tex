@@ -35,7 +35,7 @@
 \captionsetup{%
 singlelinecheck=off,                % Многострочные подписи, например у таблиц
 skip=2pt,                           % Вертикальная отбивка между подписью и содержимым рисунка или таблицы определяется ключом
-justification=centering,            % Центрирование подписей, заданных командой \caption
+justification=justified,            % Центрирование подписей, заданных командой \caption
 }
 
 %%% Рисунки %%%
@@ -119,7 +119,7 @@ justification=centering,            % Центрирование подписе�
 }
 
 %%% Шаблон %%%
-\DeclareRobustCommand{\todo}{\textcolor{red}}       % решаем проблему превращения названия цвета в результате \MakeUppercase, http://tex.stackexchange.com/a/187930/79756 , \DeclareRobustCommand protects \todo from expanding inside \MakeUppercase
+\DeclareRobustCommand{\todo}{\textcolor{black}}       % решаем проблему превращения названия цвета в результате \MakeUppercase, http://tex.stackexchange.com/a/187930/79756 , \DeclareRobustCommand protects \todo from expanding inside \MakeUppercase
 \setlength{\parindent}{2.5em}                       % Абзацный отступ. Должен быть одинаковым по всему тексту и равен пяти знакам (ГОСТ Р 7.0.11-2011, 5.3.7).
 
 %%% Списки %%%
