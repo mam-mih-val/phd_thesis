@@ -132,9 +132,10 @@ Model) для моделирования ядерных столкновений
 \end{center}
 \end{figure}
 
-Величина азимутальной анизотропии определяется коэффициентами потоков $v_n$ в разложении в ряд Фурье зависимости выхода частиц $dN/d(\varphi- \Psi_{RP})$  от разницы между азимутальным углом импульса частиц $\varphi$  и азимутальным углом плоскости реакции $\Psi_{RP}$~\cite{Voloshin:2008dg}:
+Величина азимутальной анизотропии определяется коэффициентами потоков $v_n$ в разложении в ряд Фурье зависимости выхода частиц $\rho(\varphi- \Psi_{RP})$  от разницы между азимутальным углом импульса частиц $\varphi$  и азимутальным углом плоскости реакции $\Psi_{RP}$~\cite{Voloshin:2008dg}:
 \begin{eqnarray}
-   \frac{dN}{d\varphi} \propto 1 + 2 \sum_{n=1} v_n \cos\left( n \left( \varphi - \Psi_{RP} \right) \right),
+    \rho(\varphi- \Psi_{RP}) = \frac{1}{2\pi}(1 + 2 \sum_{n=1} v_n \cos\left( n \left( \varphi - \Psi_{RP} \right) \right)),
+    \label{eq:rho_phi_psi}
 \end{eqnarray}
 %
 где $n$ -- порядок гармоники.
@@ -362,9 +363,10 @@ EOS для изоспин-симметричной материи, котора�
 \\
 &=& 
 \nonumber
-\ds \int_{0}^{2\pi} d \varphi d \Psi_{RP} \rho( \varphi - \Psi_{RP} )
-u_n Q_n^* = v_n\{SP\} R_n.
+\ds \int_{0}^{2\pi} d \Psi_{RP} \int_{0}^{2\pi} d \varphi \, \rho( \varphi - \Psi_{RP} ) \,
+u_n Q_n^* = v_n\{SP\} R_n,
 \end{eqnarray}
+где $\rho( \varphi - \Psi_{RP} )$ определен уравнением~(\ref{eq:rho_phi_psi}).
 Таким образом, несмещенная оценка для анизотропного потока $n$-й гармоники выражается как
 \begin{equation}
   \label{sproduct}
@@ -374,12 +376,12 @@ u_n Q_n^* = v_n\{SP\} R_n.
 Вычисление коэффициента  $R_n$ может быть выполнено с использованием парных корреляций $Q_n$-векторов:
 \begin{eqnarray}
 \label{resolution}
-\mean{ Q_n^a Q_n^{b}} = \mean{X_n^a X_n^b}+ \mean{Y_n^a Y_n^b}= \frac{1}{4} R_n^2.
+\langle Q_n^a Q_n^{b*} \rangle = \langle X_n^a X_n^b \rangle + \langle Y_n^a Y_n^b \rangle = \frac{1}{4} R_n^2.
 \end{eqnarray}
 где буквами $a$ и $b$ обозначены две различные группы частиц, в каждой из которых оценка
 плоскости симметрии $\Psi_n^{a,b}$ была выполнена независимо (подсобытия).
 Фактор $1/4$ здесь учитывает множественность между полным событием и подсобытиями $a$ и $b$.
-Этот метод вычисления  коэффициента  $R_n = 2 \sqrt{Q_{n}^{a}Q_{n}^{b}}$  называется методом двух подсобытий.
+Этот метод вычисления  коэффициента  $R_n = 2 \sqrt{ \langle Q_{n}^{a}Q_{n}^{b*} \rangle }$  называется методом двух подсобытий.
 Метод  требует построения двух равнозначных
 $Q_{n}^{a,b}$ векторов c одинаковой множественностью и величиной разрешения. 
 В коллайдерных экспериментах, где акцептанс симметричен относительно средних быстрот, это можно сделать, собирая
@@ -394,7 +396,7 @@ $Q_{n}^{a,b}$ векторов c одинаковой множественнос
 Для трех групп частиц, к примеру $a$, $b$ and $c$, можно рассчитать $R_n$ согласно формуле
 %
 \begin{equation}
-    R_n\{a(b,c)\} = \sqrt{ \frac{  \langle Q_n^a Q_n^b \rangle \langle Q_n^a Q_n^c \rangle }{  \langle Q_n^b Q_n^c \rangle } }.
+    R_n\{a(b,c)\} = \sqrt{ \frac{  \langle Q_n^a Q_n^{b*} \rangle \langle Q_n^a Q_n^{c*} \rangle }{  \langle Q_n^b Q_n^{c*} \rangle } }.
     \label{eq:r1_3sub}
 \end{equation}
 %
@@ -404,9 +406,9 @@ $Q_{n}^{a,b}$ векторов c одинаковой множественнос
 %
 \begin{eqnarray}
 \label{standardMethod}
-v_n\{EP\} = \frac{\mean{\cos\left[n(\phi-\Psi_{\rm n}^{EP;a,b})\right]}}
-{R_n} = \frac{\mean{\cos\left[n(\phi-\Psi_{\rm n}^{EP;a,b})\right]}}
-{\sqrt{\mean{\cos\left[ n(\Psi_{\rm n}^{EP;a} - \Psi_{\rm n}^{EP;b})\right]}}}\ .
+v_n\{EP\} = \frac{ \langle {\cos\left[n(\phi-\Psi_{\rm n}^{EP;a,b})\right]} \rangle }
+{R_n} = \frac{\langle {\cos\left[n(\phi-\Psi_{\rm n}^{EP;a,b})\right]} \rangle }
+{2 \sqrt{\langle {\cos\left[ n(\Psi_{\rm n}^{EP;a} - \Psi_{\rm n}^{EP;b})\right]} \rangle }}\ .
 \end{eqnarray}
 %
 Когда метод плоскости событий только разрабатывался, предполагалось, что флуктуации $v_n$ от события к событию пренебрежимо малы. 
@@ -441,14 +443,14 @@ v_n\{EP\} = \frac{\mean{\cos\left[n(\phi-\Psi_{\rm n}^{EP;a,b})\right]}}
 Модифицируя метод трёх подсобытий, получим следующую формулу для вычисления коэффициента разрешения
 плоскости симметрии $R_n$ (метод четырёх подсобытий):
 \begin{equation}
-    R_n\{a(d)(b,c)\} = \langle Q_n^a Q_n^d \rangle \sqrt{ \frac{  \langle Q_n^d Q_n^b \rangle \langle Q_n^d Q_n^c \rangle }{  \langle Q_n^b Q_n^c \rangle } }.
+    R_n\{a(d)(b,c)\} = \langle Q_n^a Q_n^{d*} \rangle \sqrt{ \frac{  \langle Q_n^d Q_n^{b*} \rangle \langle Q_n^d Q_n^{c*} \rangle }{  \langle Q_n^b Q_n^{c*} \rangle } }.
     \label{eq:r1_4sub}
 \end{equation}
 
 Поскольку угол плоскости реакции распределен случайно и равномерно (в случае идеального акцептанса детектора), корреляцию векторов можно заменить на корреляцию компонент (для деталей см.~\cite{Voloshin:1994mz,Voloshin:2008dg,Mamaev:2023yhz}):
 %
 \begin{equation}
-    \langle Q_n^{a} Q_n^{b} \rangle = 
+    \langle Q_n^{a} Q_n^{b*} \rangle = 
     2 \langle X_n^a X_n^b \rangle =
     2 \langle Y_n^a Y_n^b \rangle,
     \label{eq:components_2part}
@@ -456,7 +458,7 @@ v_n\{EP\} = \frac{\mean{\cos\left[n(\phi-\Psi_{\rm n}^{EP;a,b})\right]}}
 %
 или аналогично для корреляции трех частиц:
 \begin{equation}
-    \langle Q_{2n}^{a} Q_n^{b}  Q_n^{c} \rangle = 
+    \langle Q_{2n}^{a} Q_n^{b*}  Q_n^{c*} \rangle = 
     4 \langle X_{2n}^a X_n^b  X_n^c \rangle =
     4 \langle X_{2n}^a Y_n^b  Y_n^c \rangle =
     4 \langle Y_{2n}^a X_n^b  Y_n^c \rangle =
@@ -548,7 +550,7 @@ $N$ обозначает число модулей, использованных
 
 4) Вычисление статистических погрешностей измерений методом бутстрепа.  В выражениях (\ref{sproduct}),  (\ref{eq:r1_3sub}),  (\ref{eq:r1_4sub})
 некоторые $Q_n$-векторы участвуют одновременно в нескольких корреляциях, к примеру как в уравнении (\ref{eq:r1_3sub}).
-Корреляции $\langle Q_n^a, Q_n^b \rangle$, $\langle Q_n^a, Q_n^c \rangle$ и $\langle Q_n^b, Q_n^c \rangle$ не являются независимыми измерениями.  
+Корреляции $\langle Q_n^a, Q_n^{b*} \rangle$, $\langle Q_n^a, Q_n^{c*} \rangle$ и $\langle Q_n^b, Q_n^{c*} \rangle$ не являются независимыми измерениями.  
 Их ошибки, в свою очередь, оказываются скоррелированными.
 В этом случае погрешность косвенных измерений, описываемая формулой ниже, не является правильной:
 \begin{equation}
